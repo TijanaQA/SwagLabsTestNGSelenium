@@ -26,7 +26,11 @@ public class CartTest extends BaseTest {
         loginPage.userLogin();
         homepage.clickOnAddToCartButtons();
         homepage.clickOnContainer();
+        Assert.assertTrue(cartPage.getItem1Headline.isDisplayed());
+        Assert.assertTrue(cartPage.getItem2Headline.isDisplayed());
         cartPage.clickOnCartRemoveButtons();
+        Assert.assertFalse(cartPage.getItem1Headline.isDisplayed());
+        Assert.assertFalse(cartPage.getItem2Headline.isDisplayed());
     }
     @Test(priority = 20)
     public void userCanClickOnContinueShoppingButton() {

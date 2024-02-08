@@ -10,9 +10,9 @@ public class LoginPage extends BaseTest {
     public LoginPage() {
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(id = "user-name")
     public WebElement getUsernameField;
-
     public void inputValidUsername() {
         getUsernameField.sendKeys("standard_user");
     }
@@ -22,9 +22,9 @@ public class LoginPage extends BaseTest {
     public void inputEmptyUsername() {
         getUsernameField.sendKeys("");
     }
+
     @FindBy(id = "password")
     public WebElement getPasswordField;
-
     public void inputValidPassword() {
         getPasswordField.sendKeys("secret_sauce");
     }
@@ -34,12 +34,13 @@ public class LoginPage extends BaseTest {
     public void inputEmptyPassword() {
         getPasswordField.sendKeys("");
     }
+
     @FindBy(id = "login-button")
     public WebElement getLoginButton;
-
     public void clickOnLoginButton() {
         getLoginButton.click();
     }
+
     @FindBy(css = "h3[data-test=error]")
     public WebElement getErrorMessage;
 

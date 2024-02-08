@@ -28,7 +28,7 @@ public class HomepageTest extends BaseTest {
         Assert.assertTrue(homepage.getRemoveButton2.isDisplayed());
     }
     @Test(priority = 20)
-    public void userCanClickOnRemoveButton() {
+    public void userCanClickOnRemoveButtons() {
         loginPage.userLogin();
         homepage.clickOnRemoveButtons();
         Assert.assertTrue(homepage.getAddToCartButton1.isDisplayed());
@@ -43,12 +43,31 @@ public class HomepageTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(),expectedURL);
     }
     @Test(priority = 40)
+    public void userCanClickOnAllItemsSectionInHamburgerMenu() {
+        loginPage.userLogin();
+        homepage.clickOnHamburgerMenu();
+        homepage.clickOnAllItems();
+        String expectedURL = "https://www.saucedemo.com/inventory.html";
+        Assert.assertEquals(driver.getCurrentUrl(),expectedURL);
+    }
+    @Test(priority = 50)
+    public void userCanClickOnResetAppStateSectionInHamburgerMenu() {
+        loginPage.userLogin();
+        homepage.clickOnHamburgerMenu();
+        homepage.clickOnResetAppState();
+        String expectedURL = "https://www.saucedemo.com/inventory.html";
+        Assert.assertEquals(driver.getCurrentUrl(),expectedURL);
+    }
+    @Test(priority = 60)
     public void userCanClickOnDropdownMenu() {
         loginPage.userLogin();
         homepage.clickOnDropdown();
         homepage.clickOnElement("Name (A to Z)");
+        homepage.clickOnElement("Name (Z to A)");
+        homepage.clickOnElement("Price (low to high)");
+        homepage.clickOnElement("Price (high to low)");
     }
-    @Test(priority = 50)
+    @Test(priority = 70)
     public void userCanClickOnCartContainer() {
         loginPage.userLogin();
         homepage.clickOnContainer();

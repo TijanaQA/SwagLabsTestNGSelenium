@@ -15,11 +15,13 @@ public class CartPage extends BaseTest {
     public void clickOnCheckoutButton() {
         getCheckoutButton.click();
     }
+
     @FindBy(id = "continue-shopping")
     public WebElement getContinueShoppingButton;
     public void clickOnContinueShoppingButton() {
         getContinueShoppingButton.click();
     }
+
     @FindBy(id = "item_4_title_link")
     public WebElement getItem1Headline;
     @FindBy(id = "item_0_title_link")
@@ -30,6 +32,7 @@ public class CartPage extends BaseTest {
     public void clickOnRemoveButton1() {
         getRemoveButton1.click();
     }
+
     @FindBy(id = "remove-sauce-labs-bike-light")
     public WebElement getRemoveButton2;
     public void clickOnRemoveButton2() {
